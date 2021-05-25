@@ -42,16 +42,16 @@ function App(conf) {
     updateSize();
     window.addEventListener('resize', updateSize, false);
 
-    document.addEventListener('mousemove', e => {
-      const v = new THREE.Vector3();
-      camera.getWorldDirection(v);
-      v.normalize();
-      mousePlane.normal = v;
-      mouse.x = (e.clientX / width) * 2 - 1;
-      mouse.y = - (e.clientY / height) * 2 + 1;
-      raycaster.setFromCamera(mouse, camera);
-      raycaster.ray.intersectPlane(mousePlane, mousePosition);
-    });
+    // document.addEventListener('mousemove', e => {
+    //   const v = new THREE.Vector3();
+    //   camera.getWorldDirection(v);
+    //   v.normalize();
+    //   mousePlane.normal = v;
+    //   mouse.x = (e.clientX / width) * 2 - 1;
+    //   mouse.y = - (e.clientY / height) * 2 + 1;
+    //   raycaster.setFromCamera(mouse, camera);
+    //   raycaster.ray.intersectPlane(mousePlane, mousePosition);
+    // });
 
     initScene();
     initGui();
@@ -59,15 +59,17 @@ function App(conf) {
   }
 
   function initGui() {
-    noiseInput.value = 101 - conf.xyCoef;
-    heightInput.value = conf.zCoef * 100 / 25;
+    conf.xyCoef = 101 - 1;
+    conf.zCoef = 100 * 25 / 100;
+    // noiseInput.value = 101 - conf.xyCoef;
+    // heightInput.value = conf.zCoef * 100 / 25;
 
-    noiseInput.addEventListener('input', e => {
-      conf.xyCoef = 101 - noiseInput.value;
-    });
-    heightInput.addEventListener('input', e => {
-      conf.zCoef = heightInput.value * 25 / 100;
-    });
+    // noiseInput.addEventListener('input', e => {
+    //   conf.xyCoef = 101 - noiseInput.value;
+    // });
+    // heightInput.addEventListener('input', e => {
+    //   conf.zCoef = heightInput.value * 25 / 100;
+    // });
 
     // document.getElementById('trigger').addEventListener('click', e => {
     //   updateLightsColors();
