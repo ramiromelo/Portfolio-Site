@@ -1,6 +1,6 @@
 // import * as THREE from 'three';
 
-App({ el: 'background' });
+App({ el: 'background2' });
 
 function App(conf) {
   conf = {
@@ -29,8 +29,8 @@ function App(conf) {
   const mousePosition = new THREE.Vector3();
   const raycaster = new THREE.Raycaster();
 
-  const noiseInput = document.getElementById('noiseInput');
-  const heightInput = document.getElementById('heightInput');
+  // const noiseInput = document.getElementById('noiseInput');
+  // const heightInput = document.getElementById('heightInput');
 
   init();
 
@@ -69,9 +69,9 @@ function App(conf) {
       conf.zCoef = heightInput.value * 25 / 100;
     });
 
-    document.getElementById('trigger').addEventListener('click', e => {
-      updateLightsColors();
-    });
+    // document.getElementById('trigger').addEventListener('click', e => {
+    //   updateLightsColors();
+    // });
   }
 
   function initScene() {
