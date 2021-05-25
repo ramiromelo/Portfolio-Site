@@ -16,5 +16,8 @@
   "devDependencies": {
     "lite-server": "^2.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "simplex-noise": "^2.4.0",
+    "three": "^0.128.0"
+  }
 }
