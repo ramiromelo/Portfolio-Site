@@ -450,6 +450,11 @@ section {
   color: #444444;
   margin: 15px 0 0 0;
   font-size: 26px;
+  list-style-type:none;
+}
+
+.hero h2 li{
+  list-style-type:none;
 }
 
 .hero .btn-get-started {
